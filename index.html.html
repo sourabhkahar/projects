@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utleie Flytskjema Frittstående Piler</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+
+        .flowchart-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Styling av boksene */
+        .flow-step {
+            background-color: #fffacd; /* Lys gul/beige farge */
+            border: 1px solid #e0c88b;
+            padding: 20px 30px;
+            margin: 10px 0; /* Gir standard margin rundt boksene */
+            border-radius: 10px;
+            text-align: center;
+            cursor: pointer;
+            width: 200px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .flow-step:hover {
+            background-color: #ffe5a8;
+            transform: translateY(-2px);
+        }
+
+        /* STYLING AV DET FRITTSTÅENDE PIL-ELEMENTET */
+        .arrow {
+            /* Lager en trekant med CSS border-tricks */
+            width: 0; 
+            height: 0; 
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 20px solid #666; /* Fargen på pilen */
+            margin: 0 auto; /* Sentrerer pilen horisontalt mellom boksene */
+        }
+        
+
+        /* POPUP MODAL STYLING (uendret fra sist) */
+        .modal {
+            display: none; 
+            position: fixed;
+            z-index: 1; 
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5); 
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 400px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+
+        .close-btn {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="flowchart-container">
+        <!-- Boks 1 -->
+        <div class="flow-step" onclick="showPopup('Annonsere bolig. Her legger du ut annonsen på finn.no, hybel.no eller lignende.')">
+            Annonsere bolig
+        </div>
+        <!-- Frittstående pil 1 -->
+        <div class="arrow"></div>
+
+        <!-- Boks 2 -->
+        <div class="flow-step" onclick="showPopup('Kredittsjekk av leietaker. Viktig å sjekke om leietaker har betalingsanmerkninger.')">
+            Kredittsjekk av leietaker
+        </div>
+        <!-- Frittstående pil 2 -->
+        <div class="arrow"></div>
+
+        <!-- Boks 3 -->
+        <div class="flow-step" onclick="showPopup('Signering av leiekontrakt. Sørg for at alle parter signerer en juridisk gyldig kontrakt.')">
+            Signering av leiekontrakt
+        </div>
+         <!-- Frittstående pil 3 -->
+        <div class="arrow"></div>
+
+        <!-- Boks 4 -->
+        <div class="flow-step" onclick="showPopup('Opprettelse av depositumskonto. Pengene skal settes på en egen konto i leietakers navn.')">
+            Opprettelse av depositumskonto
+        </div>
+         <!-- Frittstående pil 4 -->
+        <div class="arrow"></div>
+
+        <!-- Boks 5 -->
+        <div class="flow-step" onclick="showPopup('Innflyttingsprotokoll. Dokumenter boligens tilstand med bilder og signaturer for å unngå uenighet ved utflytting.')">
+            Innflyttings protokoll
+        </div>
+    </div>
+
+    <!-- Popup Vindu (Modal) -->
+    <div id="myModal" class="modal" onclick="closePopupOutside(event)">
+      <div class="modal-content">
+        <span class="close-btn" onclick="closePopup()">&times;</span>
+        <h3 id="modalTitle"></h3>
+        <p id="modalText"></p>
+      </div>
+    </div>
+
+    <script>
+        const modal = document.getElementById("myModal");
+        const modalTitle = document.getElementById("modalTitle");
+        const modalText = document.getElementById("modalText");
+
+        function showPopup(content) {
+            const parts = content.split('. ');
+            modalTitle.innerText = parts;
+            modalText.innerText = parts.slice(1).join('. ');
+            modal.style.display = "flex";
+        }
+
+        function closePopup() {
+            modal.style.display = "none";
+        }
+
+        function closePopupOutside(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>
