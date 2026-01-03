@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interactive House Rental Flowchart</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true, theme: 'neutral', securityLevel: 'loose' });
+  </script>
+  <style>
+    .mermaid svg { width: 100%; height: auto; }
+  </style>
+</head>
+<body class="bg-gray-50 min-h-screen flex flex-col items-center py-10 px-4">
+
+  <h1 class="text-3xl font-bold text-orange-700 mb-8">
+    🏠 Interactive House Rental Flowchart
+  </h1>
+
+  <!-- Mermaid Diagram -->
+  <div class="bg-white shadow-xl rounded-lg p-6 w-full max-w-5xl overflow-x-auto">
+    <pre class="mermaid" id="rentalDiagram">
+flowchart TD
+    A([Start]) --> B(Property Prepared)
+    B --> C(Listed & Marketed)
+    C --> D{Tenant Inquiry?}
+    D -- Yes --> E(Screen Tenant)
+    D -- No --> C
+    E --> F{Tenant Interested?}
+    F -- Yes --> G(Application Submitted)
+    F -- No --> C
+    G --> H{Background Check Passed?}
+    H -- Yes --> I(Sign Lease)
+    H -- No --> C
+    I --> J{Payment Method}
+    J -- Bank Transfer --> K(Payment Received)
+    J -- Online Gateway --> L(Payment Verified)
+    K --> M(Move-In & Handover)
+    L --> M
+    M --> N([End])
+    click B callback "Property Preparation"
+    click D callback "Tenant Inquiry"
+    click H callback "Background Check"
+    click J callback "Payment Options"
+    click M callback "Move-In Process"
+    click N callback "End of Process"
+    style A fill:#fb923c,color:#fff,stroke:#f97316
+    style N fill:#fb923c,color:#fff,stroke:#f97316
+    style D fill:#fef3c7,stroke:#f97316,color:#78350f
+    style H fill:#fef3c7,stroke:#f97316,color:#78350f
+    style J fill:#fef3c7,stroke:#f97316,color:#78350f
+    style B fill:#fff,stroke:#fb923c,color:#374151
+    style C fill:#fff,stroke:#fb923c,color:#374151
+    style E fill:#fff,stroke:#fb923c,color:#374151
+    style F fill:#fff,stroke:#fb923c,color:#374151
+    style G fill:#fff,stroke:#fb923c,color:#374151
+    style I fill:#fff,stroke:#fb923c,color:#374151
+    style K fill:#fff,stroke:#fb923c,color:#374151
+    style L fill:#fff,stroke:#fb923c,color:#374151
+    style M fill:#fff,stroke:#fb923c,color:#374151
+    classDef default fill:#fff,stroke:#fb923c,color:#374151;
+    classDef decision fill:#fef3c7,stroke:#f97316,color:#78350f;
+    classDef startEnd fill:#fb923c,color:#fff,stroke:#f97316;
+    class A,N startEnd;
+  </pre>
+  </div>
+
+  <!-- Modal -->
+  <div id="infoModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+    <div class="bg-white rounded-lg shadow-lg p-6 max-w-md">
+      <h2 id="modalTitle" class="text-2xl font-bold text-orange-700 mb-3"></h2>
+      <p id="modalInfo" class="text-gray-700 mb-6 leading-relaxed"></p>
+      <button id="closeModal" class="bg-orange-600 text-white px-4 py-2 rounded hover:bg-orange-700">
+        Close
+      </button>
+    </div>
+  </div>
+
+  <script>
+    // Simple mapping for popup info
+    const infoData = {
+      "Property Preparation": "Ensure the property is ready for tenants — cleaning, maintenance, and professional photos.",
+      "Tenant Inquiry": "Potential tenants reach out for availability or to schedule a viewing.",
+      "Background Check": "Verify tenant’s ID, credit score, job stability, and rental history.",
+      "Payment Options": "Tenant selects preferred payment method — bank transfer or online gateway.",
+      "Move-In Process": "Tenant receives keys, signs condition report, and moves into the property.",
+      "End of Process": "The rental process is complete. Maintain contact for future renewals or maintenance."
+    };
+
+    // Called by Mermaid's click events
+    function callback(id) {
+      const modal = document.getElementById('infoModal');
+      const title = document.getElementById('modalTitle');
+      const info = document.getElementById('modalInfo');
+      title.textContent = id;
+      info.textContent = infoData[id] || "No detailed info available.";
+      modal.classList.remove('hidden');
+    }
+
+    // Close modal
+    document.getElementById('closeModal').addEventListener('click', () => {
+      document.getElementById('infoModal').classList.add('hidden');
+    });
+    window.addEventListener('click', e => {
+      const modal = document.getElementById('infoModal');
+      if (e.target === modal) modal.classList.add('hidden');
+    });
+  </script>
+</body>
+</html>
