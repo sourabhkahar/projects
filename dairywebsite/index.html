@@ -1,97 +1,450 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <title>FoodCo | Home</title>
+  <meta charset="UTF-8" />
+  <title>Food Ingredients Company</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            beige: '#f5f1ea',
+            brown: '#6b4f3f',
+            brownDark: '#4a3629'
+          }
+        }
+      }
+    }
+  </script>
 </head>
 
-<body class="bg-[#f5f1ea] text-[#4a3629]">
+<body class="bg-beige text-brownDark scroll-smooth">
+  <nav class="fixed w-full z-50 bg-beige/90 backdrop-blur border-b">
+    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="index.html" class="text-2xl font-bold text-brown">FoodCo</a>
 
-<style>
-.nav{
-  position:relative;
-  font-weight:500;
-}
-.nav::after{
-  content:'';
-  position:absolute;
-  left:0;bottom:-4px;
-  width:0;height:2px;
-  background:#6b4f3f;
-  transition:.3s;
-}
-.nav:hover::after{width:100%}
-</style>
+      <div class="space-x-8 hidden md:flex">
+        <a href="#" class="nav">Home</a>
+        <a href="#company" class="nav">Our Company</a>
+        <a href="#products" class="nav">Products</a>
+        <a href="#catalogue" class="nav">Catalogue</a>
+        <a href="#contact" class="nav">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ================= HERO ================= -->
+  <!-- <section class="min-h-screen flex items-center justify-center text-center px-6">
+  <div>
+    <h1 class="text-4xl md:text-6xl font-bold mb-6">
+      Premium Food Ingredients
+    </h1>
+    <p class="max-w-xl mx-auto mb-8 text-lg">
+      Quality dairy, chocolate, and baking solutions crafted for professionals.
+    </p>
+    <a href="#products" class="bg-brown text-white px-6 py-3 rounded-full hover:bg-brownDark transition">
+      Explore Products
+    </a>
+  </div>
+</section> -->
+
+  <section id="" class="min-h-screen bg-cover bg-center flex items-center"
+    style="background-image:url('https://unsplash.com/photos/sliced-bread-on-brown-wooden-chopping-board-X4zRlInfdQg');">
+    <div class="bg-black/40 w-full h-full absolute"></div>
+
+    <div class="relative z-10 max-w-6xl mx-auto px-6 text-white">
+      <h1 class="text-5xl md:text-6xl font-bold mb-6">
+        Crafted Ingredients <br>for Exceptional Taste
+      </h1>
+
+      <p class="max-w-xl mb-8 text-lg">
+        Premium dairy, indulgent chocolate, and precision baking mixes
+        trusted by professionals.
+      </p>
+
+      <a href="products.html"
+        class="inline-block bg-[#6b4f3f] px-8 py-4 rounded-full text-lg hover:bg-[#4a3629] transition">
+        Discover Our Range
+      </a>
+    </div>
+  </section>
+
+  <section class="py-20 bg-beige">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 px-6 items-center">
+
+      <div>
+        <h2 class="text-4xl font-semibold mb-6">Our Philosophy</h2>
+        <p class="leading-relaxed mb-4">
+          We believe great food starts with honest ingredients.
+          Every product is designed to deliver consistency,
+          performance, and unforgettable flavor.
+        </p>
+        <p>
+          From artisanal bakeries to large kitchens,
+          our ingredients work as hard as you do.
+        </p>
+      </div>
+
+      <img src="https://images.unsplash.com/photo-1550583724-b2692b85b150" class="rounded-2xl shadow-lg">
+    </div>
+  </section>
+
+  <!-- ================= OUR COMPANY ================= -->
+  <section class="py-24 bg-white" id="company" >
+    <div class="max-w-7xl mx-auto px-6">
+
+      <h2 class="text-4xl font-semibold mb-6 text-center">
+        Inside Our Company
+      </h2>
+
+      <p class="text-center max-w-2xl mx-auto mb-16">
+        From sourcing to production, every step is driven by quality,
+        precision, and passion for great food.
+      </p>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+        <!-- Card 1 -->
+        <div class="img-card">
+          <img src="https://images.unsplash.com/photo-1550583724-b2692b85b150">
+          <div class="overlay">
+            <h3>Artisan Craft</h3>
+            <p>Meticulously developed ingredients for superior results.</p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="img-card">
+          <img src="https://images.unsplash.com/photo-1604908177522-402c1a42da7d">
+          <div class="overlay">
+            <h3>Premium Sourcing</h3>
+            <p>Only the finest raw materials make it into our products.</p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="img-card">
+          <img src="https://images.unsplash.com/photo-1585238342028-4bbc21f5fcd3">
+          <div class="overlay">
+            <h3>Modern Facilities</h3>
+            <p>Advanced production ensuring consistency & safety.</p>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="img-card">
+          <img src="https://images.unsplash.com/photo-1581092334651-ddf26d9f00c0">
+          <div class="overlay">
+            <h3>Quality Control</h3>
+            <p>Every batch tested for performance and taste.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PRODUCTS ================= -->
+  <section class="py-20 max-w-7xl mx-auto px-6"  id="products">
+    <h1 class="text-4xl font-semibold mb-16 text-center">Our Products</h1>
+
+    <!-- ================= DAIRY ================= -->
+    <h2 class="text-3xl mb-8">Dairy</h2>
+    <div class="grid md:grid-cols-3 gap-8 mb-20">
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1604908177522-402c1a42da7d">
+        <h3>Butter Sheet</h3>
+        <p>Ideal for perfect lamination and flaky pastries.</p>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1585238342028-4bbc21f5fcd3">
+        <h3>Butter for Incorporation</h3>
+        <p>Designed for smooth mixing and consistent texture.</p>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1576186726580-a1c78c7a8033">
+        <h3>Clarified Butter</h3>
+        <p>Pure butterfat with high heat stability.</p>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1621939514649-280e2ee25f60">
+        <h3>Cooking Cream 1</h3>
+        <p>Rich mouthfeel and excellent cooking performance.</p>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1542444459-db63c1c6f9d9">
+        <h3>Cooking Cream 2</h3>
+        <p>Balanced creaminess for sauces and gravies.</p>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587">
+        <h3>Yogurt</h3>
+        <p>Fresh taste with smooth and consistent texture.</p>
+      </div>
+
+    </div>
+
+    <!-- ================= CHOCOLATE ================= -->
+    <h2 class="text-3xl mb-8">Chocolate</h2>
+    <div class="grid md:grid-cols-3 gap-8 mb-20">
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1606312619070-d48b4c652a52">
+        <h3>Callets</h3>
+        <p>Uniform melting chocolate for professional use.</p>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1511381939415-e44015466834">
+        <h3>Truffles</h3>
+        <p>Indulgent chocolate with deep cocoa notes.</p>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1599785209707-a456fc6c1efc">
+        <h3>Chocolate Powder</h3>
+        <p>Rich flavor ideal for baking and beverages.</p>
+      </div>
+
+    </div>
+
+    <!-- ================= BAKING MIXES ================= -->
+    <h2 class="text-3xl mb-8">Baking Mixes</h2>
+    <div class="grid md:grid-cols-4 gap-8">
+
+      <div class="card"><img src="https://images.unsplash.com/photo-1517430816045-df4b7de11d1d">
+        <h3>Product 1</h3>
+        <p>Consistent baking results.</p>
+      </div>
+      <div class="card"><img src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec">
+        <h3>Product 2</h3>
+        <p>Reliable texture and rise.</p>
+      </div>
+      <div class="card"><img src="https://images.unsplash.com/photo-1598373182133-52452f7691ef">
+        <h3>Product 3</h3>
+        <p>Perfect balance of flavor.</p>
+      </div>
+      <div class="card"><img src="https://images.unsplash.com/photo-1564936281324-3b8c82e7a1f0">
+        <h3>Product 4</h3>
+        <p>Professional-grade mix.</p>
+      </div>
+      <div class="card"><img src="https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2">
+        <h3>Product 5</h3>
+        <p>Easy handling and consistency.</p>
+      </div>
+      <div class="card"><img src="https://images.unsplash.com/photo-1605475129342-3b1e9385c3b4">
+        <h3>Product 6</h3>
+        <p>Reliable performance.</p>
+      </div>
+      <div class="card"><img src="https://images.unsplash.com/photo-1509440159598-8b7b56c13f09">
+        <h3>Product 7</h3>
+        <p>Balanced crumb and texture.</p>
+      </div>
+      <div class="card"><img src="https://images.unsplash.com/photo-1512058564366-18510be2db19">
+        <h3>Product 8</h3>
+        <p>Designed for efficiency.</p>
+      </div>
+      <div class="card"><img src="https://images.unsplash.com/photo-1527515545081-5db817172677">
+        <h3>Product 9</h3>
+        <p>Great taste, easy process.</p>
+      </div>
+      <div class="card"><img src="https://images.unsplash.com/photo-1511690656952-34342bb7c2f2">
+        <h3>Product 10</h3>
+        <p>Uniform results every time.</p>
+      </div>
+      <div class="card"><img src="https://images.unsplash.com/photo-1551218808-94e220e084d2">
+        <h3>Product 11</h3>
+        <p>Trusted by professionals.</p>
+      </div>
+
+    </div>
+  </section>
 
 
-<style>
-  .nav-link {
+  <!-- ================= CATALOGUE ================= -->
+  <section id="catalogue" class="bg-beige py-20 px-6 max-w-6xl mx-auto text-center">
+    <div class="bg-white py-10">
+      <h2 class="text-3xl font-semibold mb-6">Catalogue</h2>
+      <p class="mb-6">Download our complete product catalogue.</p>
+      <a href="catalogue.pdf" download
+        class="inline-block bg-brown text-white px-6 py-3 rounded-full hover:bg-brownDark transition">
+        Download PDF
+      </a>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section id="contact" class="py-20 bg-white px-6">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
+
+      <!-- Contact Info -->
+      <div>
+        <h2 class="text-3xl font-semibold mb-6">Contact Us</h2>
+        <p class="mb-4">
+          📍 Location: Industrial Area, City Name
+        </p>
+        <p class="mb-4">
+          📞 Phone: +91 98765 43210
+        </p>
+        <p>
+          📧 Email: info@company.com
+        </p>
+      </div>
+
+      <!-- Contact Form -->
+      <form class="space-y-4">
+        <input type="text" placeholder="Your Name" class="input-field">
+        <input type="email" placeholder="Email Address" class="input-field">
+        <textarea rows="4" placeholder="Message" class="input-field"></textarea>
+        <button type="submit" class="bg-brown text-white px-6 py-3 rounded hover:bg-brownDark transition">
+          Send Message
+        </button>
+      </form>
+
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="py-6 text-center text-sm bg-beige border-t">
+    © 2026 Food Ingredients Company. All rights reserved.
+  </footer>
+
+  <!-- Reusable Styles -->
+  <style>
+    .nav{
+      position:relative;
+      font-weight:500;
+    }
+    .nav::after{
+      content:'';
+      position:absolute;
+      left:0;bottom:-4px;
+      width:0;height:2px;
+      background:#6b4f3f;
+      transition:.3s;
+    }
+
+    .nav:hover::after{width:100%}
+    .product-card {
+      background: #f5f1ea;
+      padding: 1.25rem;
+      border-radius: 0.75rem;
+      text-align: center;
+      font-weight: 500;
+      transition: transform .2s;
+    }
+
+    .nav-link {
     font-weight: 500;
     color: #4a3629;
   }
   .nav-link:hover {
     color: #6b4f3f;
   }
-</style>
 
-<nav class="fixed w-full z-50 bg-beige/90 backdrop-blur border-b">
-  <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-    <a href="index.html" class="text-2xl font-bold text-brown">FoodCo</a>
+    .product-card:hover {
+      transform: translateY(-4px);
+    }
 
-    <div class="space-x-8 hidden md:flex">
-      <a href="index.html" class="nav">Home</a>
-      <a href="company.html" class="nav">Our Company</a>
-      <a href="products.html" class="nav">Products</a>
-      <a href="catalogue.html" class="nav">Catalogue</a>
-      <a href="contact.html" class="nav">Contact</a>
-    </div>
-  </div>
-</nav>
+    .input-field {
+      width: 100%;
+      padding: 0.75rem;
+      border-radius: 0.5rem;
+      border: 1px solid #d6cfc4;
+    }
 
+    .img-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 1.25rem;
+      cursor: pointer;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, .12);
+    }
 
-<section class="min-h-screen bg-cover bg-center flex items-center"
-style="background-image:url('https://images.unsplash.com/photo-1604908177522-402c1a42da7d');">
-  <div class="bg-black/40 w-full h-full absolute"></div>
+    .img-card img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      transition: transform .6s ease;
+    }
 
-  <div class="relative z-10 max-w-6xl mx-auto px-6 text-white">
-    <h1 class="text-5xl md:text-6xl font-bold mb-6">
-      Crafted Ingredients <br>for Exceptional Taste
-    </h1>
+    .img-card:hover img {
+      transform: scale(1.08);
+    }
 
-    <p class="max-w-xl mb-8 text-lg">
-      Premium dairy, indulgent chocolate, and precision baking mixes
-      trusted by professionals.
-    </p>
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top,
+          rgba(74, 54, 41, .9),
+          rgba(74, 54, 41, .2));
+      opacity: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.5rem;
+      color: #fff;
+      transition: .4s ease;
+    }
 
-    <a href="products.html"
-       class="inline-block bg-[#6b4f3f] px-8 py-4 rounded-full text-lg hover:bg-[#4a3629] transition">
-      Discover Our Range
-    </a>
-  </div>
-</section>
+    .img-card:hover .overlay {
+      opacity: 1;
+    }
 
-<section class="py-20 bg-beige">
-  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 px-6 items-center">
+    .overlay h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: .5rem;
+    }
 
-    <div>
-      <h2 class="text-4xl font-semibold mb-6">Our Philosophy</h2>
-      <p class="leading-relaxed mb-4">
-        We believe great food starts with honest ingredients.
-        Every product is designed to deliver consistency,
-        performance, and unforgettable flavor.
-      </p>
-      <p>
-        From artisanal bakeries to large kitchens,
-        our ingredients work as hard as you do.
-      </p>
-    </div>
+    .overlay p {
+      font-size: .9rem;
+      opacity: .9;
+    }
 
-    <img src="https://images.unsplash.com/photo-1550583724-b2692b85b150"
-         class="rounded-2xl shadow-lg">
-  </div>
-</section>
+    .card {
+      background: #fff;
+      border-radius: 1.25rem;
+      overflow: hidden;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, .12);
+      transition: .35s ease;
+    }
 
+    .card:hover {
+      transform: translateY(-8px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .card h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      padding: 1rem 1rem 0;
+    }
+
+    .card p {
+      padding: 0 1rem 1.5rem;
+      font-size: .95rem;
+      opacity: .85;
+    }
+  </style>
 
 </body>
+
 </html>
