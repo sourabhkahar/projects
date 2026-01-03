@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FoodCo | Catalogue</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-[#f5f1ea] text-[#4a3629]">
+<nav class="fixed w-full z-50 bg-beige/90 backdrop-blur border-b">
+  <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+    <a href="index.html" class="text-2xl font-bold text-brown">FoodCo</a>
+
+    <div class="space-x-8 hidden md:flex">
+      <a href="index.html" class="nav">Home</a>
+      <a href="company.html" class="nav">Our Company</a>
+      <a href="products.html" class="nav">Products</a>
+      <a href="catalogue.html" class="nav">Catalogue</a>
+      <a href="contact.html" class="nav">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<style>
+.nav{
+  position:relative;
+  font-weight:500;
+}
+.nav::after{
+  content:'';
+  position:absolute;
+  left:0;bottom:-4px;
+  width:0;height:2px;
+  background:#6b4f3f;
+  transition:.3s;
+}
+.nav:hover::after{width:100%}
+</style>
+
+
+<style>
+  .nav-link {
+    font-weight: 500;
+    color: #4a3629;
+  }
+  .nav-link:hover {
+    color: #6b4f3f;
+  }
+</style>
+
+<section class="py-24 bg-[#6b4f3f] text-white text-center">
+  <h2 class="text-4xl font-semibold mb-4">Complete Product Catalogue</h2>
+  <p class="mb-8 opacity-90">
+    Detailed specifications, applications & packaging.
+  </p>
+  <a href="catalogue.pdf" download
+     class="bg-white text-brown px-8 py-4 rounded-full font-medium">
+    Download PDF
+  </a>
+</section>
+</body>
+</html>

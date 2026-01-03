@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FoodCo | Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-[#f5f1ea] text-[#4a3629]">
+
+<style>
+.nav{
+  position:relative;
+  font-weight:500;
+}
+.nav::after{
+  content:'';
+  position:absolute;
+  left:0;bottom:-4px;
+  width:0;height:2px;
+  background:#6b4f3f;
+  transition:.3s;
+}
+.nav:hover::after{width:100%}
+</style>
+
+
+<style>
+  .nav-link {
+    font-weight: 500;
+    color: #4a3629;
+  }
+  .nav-link:hover {
+    color: #6b4f3f;
+  }
+</style>
+
+<nav class="fixed w-full z-50 bg-beige/90 backdrop-blur border-b">
+  <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+    <a href="index.html" class="text-2xl font-bold text-brown">FoodCo</a>
+
+    <div class="space-x-8 hidden md:flex">
+      <a href="index.html" class="nav">Home</a>
+      <a href="company.html" class="nav">Our Company</a>
+      <a href="products.html" class="nav">Products</a>
+      <a href="catalogue.html" class="nav">Catalogue</a>
+      <a href="contact.html" class="nav">Contact</a>
+    </div>
+  </div>
+</nav>
+
+
+<section class="min-h-screen bg-cover bg-center flex items-center"
+style="background-image:url('https://images.unsplash.com/photo-1604908177522-402c1a42da7d');">
+  <div class="bg-black/40 w-full h-full absolute"></div>
+
+  <div class="relative z-10 max-w-6xl mx-auto px-6 text-white">
+    <h1 class="text-5xl md:text-6xl font-bold mb-6">
+      Crafted Ingredients <br>for Exceptional Taste
+    </h1>
+
+    <p class="max-w-xl mb-8 text-lg">
+      Premium dairy, indulgent chocolate, and precision baking mixes
+      trusted by professionals.
+    </p>
+
+    <a href="products.html"
+       class="inline-block bg-[#6b4f3f] px-8 py-4 rounded-full text-lg hover:bg-[#4a3629] transition">
+      Discover Our Range
+    </a>
+  </div>
+</section>
+
+<section class="py-20 bg-beige">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 px-6 items-center">
+
+    <div>
+      <h2 class="text-4xl font-semibold mb-6">Our Philosophy</h2>
+      <p class="leading-relaxed mb-4">
+        We believe great food starts with honest ingredients.
+        Every product is designed to deliver consistency,
+        performance, and unforgettable flavor.
+      </p>
+      <p>
+        From artisanal bakeries to large kitchens,
+        our ingredients work as hard as you do.
+      </p>
+    </div>
+
+    <img src="https://images.unsplash.com/photo-1550583724-b2692b85b150"
+         class="rounded-2xl shadow-lg">
+  </div>
+</section>
+
+
+</body>
+</html>

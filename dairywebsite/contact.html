@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FoodCo | Contact</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-[#f5f1ea] text-[#4a3629]">
+
+<nav class="fixed w-full z-50 bg-beige/90 backdrop-blur border-b">
+  <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+    <a href="index.html" class="text-2xl font-bold text-brown">FoodCo</a>
+
+    <div class="space-x-8 hidden md:flex">
+      <a href="index.html" class="nav">Home</a>
+      <a href="company.html" class="nav">Our Company</a>
+      <a href="products.html" class="nav">Products</a>
+      <a href="catalogue.html" class="nav">Catalogue</a>
+      <a href="contact.html" class="nav">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<style>
+.nav{
+  position:relative;
+  font-weight:500;
+}
+.nav::after{
+  content:'';
+  position:absolute;
+  left:0;bottom:-4px;
+  width:0;height:2px;
+  background:#6b4f3f;
+  transition:.3s;
+}
+.nav:hover::after{width:100%}
+</style>
+
+
+<style>
+  .nav-link {
+    font-weight: 500;
+    color: #4a3629;
+  }
+  .nav-link:hover {
+    color: #6b4f3f;
+  }
+</style>
+
+
+<section class="py-20 max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12">
+  <div>
+    <h2 class="text-4xl font-semibold mb-6">Let’s Work Together</h2>
+    <p class="mb-4">📍 Industrial Area, City</p>
+    <p class="mb-4">📞 +91 98765 43210</p>
+    <p>📧 info@company.com</p>
+  </div>
+
+  <form class="space-y-4">
+    <input class="input" placeholder="Your Name">
+    <input class="input" placeholder="Email Address">
+    <textarea class="input" rows="4" placeholder="Message"></textarea>
+    <button class="bg-brown text-white px-6 py-3 rounded">
+      Send Message
+    </button>
+  </form>
+</section>
+
+<style>
+.input{
+  width:100%;
+  padding:1rem;
+  border-radius:.75rem;
+  border:1px solid #ddd;
+}
+</style>
+
+</body>
+</html>
